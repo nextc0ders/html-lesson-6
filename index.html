@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="My HTML lesson 6">
+	<meta name="keywords" content="html, semantics, video, audio, iframe">
+	<meta name="author" content="Next Coders">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+	<link rel="shortcut icon" href="/img/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+	<link rel="manifest" href="/img/site.webmanifest" />
+
+	<!-- Connecting a font -->
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+	<!-- Connecting styles -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<title>HTML 6 lesson</title>
+</head>
+<body>
+
+	<header>
+		<h1>Lesson 6. Semantics and multimedia</h1>
+		<nav aria-label="Main navigation">
+			<a href="#semantics">Semantics</a>
+			<a href="#media">Multimedia</a>
+			<a href="#meta">Meta</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<section id="attributes">
+			<h2>1. Attributes</h2>
+			<p>
+				HTML attributes are used to add additional information and behavior to elements.
+			</p>
+
+			<h3>rel</h3>
+			<p>
+				The <code>rel</code> (relationship) attribute specifies the relationship of the link to the current document. It is used in the <code>&lt;a&gt;</code> and <code>&lt;link&gt;</code> tags.
+			</p>
+
+			<h3>rel="noopener noreferrer"</h3>
+			<p>
+				Used in conjunction with <code>target="_blank"</code> to improve security and performance.
+			</p>
+			<ul>
+				<li><code>noopener</code> — prevents new tab access to <code>window.opener</code></li>
+				<li><code>noreferrer</code> — does not transmit referral source information</li>
+			</ul>
+
+			<span>Example of a link with attributes:</span>
+			<a
+				href="https://nextcoders.pro"
+				target="_blank"
+				rel="noopener noreferrer"
+				title="NextCoders in a new tab"
+			>
+				NextCoders web school
+			</a>
+
+			<br>
+			<br>
+
+			<span>Example of an image with attributes:</span>
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+				alt="HTML5 logo"
+				width="100"
+				title="HTML5 logo"
+			>
+
+			<h3>aria-labelledby</h3>
+			<p>
+				The <code>aria-labelledby</code> attribute links an element to another element on the page, giving it an accessible name.
+				This is used if the heading or text already exists.
+			</p>
+
+			<h3>aria-describedby</h3>
+			<p>
+				The <code>aria-describedby</code> attribute adds additional description
+				of the element for screen readers. It is used for explanations and instructions.
+			</p>
+
+			<h3>aria-label</h3>
+			<p>
+				The <code>aria-label</code> attribute directly specifies the accessible name of an element.
+				It is only used if the element has no visible text.
+			</p>
+			<span>Example:</span>
+			<button aria-label="Close menu">✕</button>
+
+			<p>
+				<strong>Important:</strong> <code>aria-label</code> should not be used together with <code>aria-labelledby</code>, as it overwrites other
+				name sources.
+			</p>
+		</section>
+
+		<section id="semantics">
+			<h2>2. HTML5 semantic tags</h2>
+			<article>
+				<h3>Article example</h3>
+				<p>This <code>&lt;article&gt;</code> is a separate block with content.</p>
+			</article>
+			<aside>
+				<p><strong>Aside:</strong> side column for additional information.</p>
+			</aside>
+		</section>
+
+		<section id="media" aria-labelledby="media-heading">
+			<h2 id="media-heading">3. Video, audio and iframe</h2>
+
+			<h3 id="video-heading">Video</h3>
+			<video
+				width="480"
+				controls
+				aria-labelledby="video-heading"
+				aria-describedby="video-desc"
+			>
+				<source src="/video/Windows XP Bootscreen.mp4" type="video/mp4">
+			</video>
+			<p id="video-desc">
+				Video of the Windows XP boot screen
+			</p>
+
+			<h3 id="audio-heading">Audio</h3>
+			<audio
+				controls
+				src="/audio/Microsoft Windows XP Startup Sound.mp3"
+				type="audio/mpeg"
+				aria-labelledby="audio-heading"
+				aria-describedby="audio-desc"
+			></audio>
+			<p id="audio-desc">
+				Windows XP startup welcome sound audio
+			</p>
+
+			<h3 id="iframe-heading">iframe</h3>
+			<iframe
+				width="500"
+				height="500"
+				src="https://nextcoders.pro"
+				title="NextCoders programming school website"
+				frameborder="0"
+				></iframe>
+			
+			<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/fenRTGlSt4c?si=AMLILSPbSjHbaydQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+		</section>
+
+		<section id="meta">
+			<h2>4. Meta tags</h2>
+			<p>
+				Meta tags are located in the <code>&lt;head&gt;</code> section and provide
+				information about the page for browsers, search engines, and other services.
+			</p>
+			<ul>
+				<li><code>&lt;meta charset="UTF-8"&gt;</code> — character encoding</li>
+				<li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> — responsive layout</li>
+				<li><code>&lt;meta name="description"&gt;</code> — page description</li>
+				<li><code>&lt;meta name="keywords"&gt;</code> — keywords</li>
+				<li><code>&lt;meta name="author"&gt;</code> — author</li>
+				<li><code>&lt;meta name="robots" content="index, follow"&gt;</code> — Tells search engines whether the page should be indexed and whether links should be followed.</li>
+				<li><code>&lt;meta name="theme-color" content="#ffffff"&gt;</code> — Sets the browser theme color on mobile devices.</li>
+			</ul>
+		</section>
+
+	</main>
+
+	<footer aria-label="Site footer">
+		<p>&copy; 2025 Next Coders</p>
+	</footer>
+
+	<script src="/js/main.js"></script>
+
+</body>
+</html>
